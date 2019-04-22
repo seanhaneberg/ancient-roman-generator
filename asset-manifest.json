@@ -1,14 +1,13 @@
 {
-  "main.css": "/ancient-roman-generator/static/css/main.7ad41fd1.chunk.css",
-  "main.js": "/ancient-roman-generator/static/js/main.c9eb09ed.chunk.js",
-  "main.js.map": "/ancient-roman-generator/static/js/main.c9eb09ed.chunk.js.map",
+  "main.css": "/ancient-roman-generator/static/css/main.0c11774d.chunk.css",
+  "main.js": "/ancient-roman-generator/static/js/main.80fa1bac.chunk.js",
+  "main.js.map": "/ancient-roman-generator/static/js/main.80fa1bac.chunk.js.map",
   "runtime~main.js": "/ancient-roman-generator/static/js/runtime~main.6fa6b1ad.js",
   "runtime~main.js.map": "/ancient-roman-generator/static/js/runtime~main.6fa6b1ad.js.map",
-  "static/js/2.a8086230.chunk.js": "/ancient-roman-generator/static/js/2.a8086230.chunk.js",
-  "static/js/2.a8086230.chunk.js.map": "/ancient-roman-generator/static/js/2.a8086230.chunk.js.map",
+  "static/js/2.3d8dcad6.chunk.js": "/ancient-roman-generator/static/js/2.3d8dcad6.chunk.js",
+  "static/js/2.3d8dcad6.chunk.js.map": "/ancient-roman-generator/static/js/2.3d8dcad6.chunk.js.map",
   "index.html": "/ancient-roman-generator/index.html",
-  "precache-manifest.4497d4820df24d166883227f7532b97e.js": "/ancient-roman-generator/precache-manifest.4497d4820df24d166883227f7532b97e.js",
+  "precache-manifest.59fa6692fa93f0f1c490f2d431ec4333.js": "/ancient-roman-generator/precache-manifest.59fa6692fa93f0f1c490f2d431ec4333.js",
   "service-worker.js": "/ancient-roman-generator/service-worker.js",
-  "static/css/main.7ad41fd1.chunk.css.map": "/ancient-roman-generator/static/css/main.7ad41fd1.chunk.css.map",
-  "static/media/logo.svg": "/ancient-roman-generator/static/media/logo.5d5d9eef.svg"
+  "static/css/main.0c11774d.chunk.css.map": "/ancient-roman-generator/static/css/main.0c11774d.chunk.css.map"
 }
