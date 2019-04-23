@@ -2,6 +2,7 @@
  * Roman Naming Conventions
  * https://en.wikipedia.org/wiki/Roman_naming_conventions
  */
+import getAbbrvForName from './Abbrv';
 import cognomina from './Cognomina';
 import { masc_praenomina, femme_praenomina } from './Praenomina';
 
@@ -35,7 +36,8 @@ class NameGenerator {
   generateNomen() {
     let praenomen = this.generatePraenomen();
     let cognomen = this.generateCognomen();
-    let name = `${praenomen} ${cognomen}`;
+    let abbr = getAbbrvForName(praenomen);
+    let name = abbr ? `${abbr}. (${praenomen}) ${cognomen}` : `${praenomen} ${cognomen}`;
     return name;
   }
 }
