@@ -5,6 +5,7 @@
 import getAbbrvForName from './Abbrv';
 import cognomina from './Cognomina';
 import { masc_praenomina, femme_praenomina } from './Praenomina';
+import agnomen from './Agnomen';
 
 const selectFrom = (array) => {
   let random = Math.random();
@@ -33,11 +34,25 @@ class NameGenerator {
     return selectFrom(sourceCollection);
   }
 
+  generateAgnomen() {
+    let agnomenChance = !!(Math.random() < 0.5);
+    if (agnomenChance) {
+      let index = Math.floor(agnomen.length * Math.random());
+      // send back a random name
+      let nickname = agnomen[index];
+      let formattedAgnomen = `${nickname.charAt(0).toUpperCase()}${nickname.slice(1)}`
+      return formattedAgnomen
+    } else {
+      return null;
+    }
+  }
+
   generateNomen() {
     let praenomen = this.generatePraenomen();
     let cognomen = this.generateCognomen();
+    let agnomen = this.generateAgnomen();
     let abbr = getAbbrvForName(praenomen);
-    let name = abbr ? `${abbr}. (${praenomen}) ${cognomen}` : `${praenomen} ${cognomen}`;
+    let name = abbr ? `${abbr}. (${praenomen}) ${cognomen} ${agnomen || ''}` : `${praenomen} ${cognomen} ${agnomen || ''}`;
     return name;
   }
 }
