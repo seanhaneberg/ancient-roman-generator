@@ -50,7 +50,7 @@ class NameGenerator {
 
   generateDateOfBirth() {
     let date = new Date();
-    let yearsSince = Math.floor(Math.random() * 80);
+    let yearsSince = Math.floor(Math.random() * 1200);
     let ancientDate = new AncientDate(yearsSince, date);
     return ancientDate.getDateString();
   }
