@@ -4,13 +4,18 @@ import './App.css';
 import NameGenerator from './tools/NameGenerator';
 class App extends Component {
   render() {
-    let string = new NameGenerator().generateNomen();
+    let generator = new NameGenerator();
+    let nomen = generator.generateNomen();
+    let age = generator.generateDateOfBirth();
     return (
       <div className="App">
         <header className="App-header">
         </header>
         <p>
-          {string}
+          Name: {nomen}
+        </p>
+        <p>
+          Born: {age}
         </p>
       </div>
     );

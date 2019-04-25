@@ -6,6 +6,7 @@ import getAbbrvForName from './Abbrv';
 import cognomina from './Cognomina';
 import { masc_praenomina, femme_praenomina } from './Praenomina';
 import agnomen from './Agnomen';
+import AncientDate from './AncientDate';
 
 const selectFrom = (array) => {
   let random = Math.random();
@@ -45,6 +46,13 @@ class NameGenerator {
     } else {
       return null;
     }
+  }
+
+  generateDateOfBirth() {
+    let date = new Date();
+    let yearsSince = Math.floor(Math.random() * 80);
+    let ancientDate = new AncientDate(yearsSince, date);
+    return ancientDate.getDateString();
   }
 
   generateNomen() {
