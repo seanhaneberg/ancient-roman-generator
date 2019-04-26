@@ -2,11 +2,15 @@
  * Roman Naming Conventions
  * https://en.wikipedia.org/wiki/Roman_naming_conventions
  */
-import getAbbrvForName from './Abbrv';
 import cognomina from './Cognomina';
 import { masc_praenomina, femme_praenomina } from './Praenomina';
 import agnomen from './Agnomen';
 import AncientDate from './AncientDate';
+import Roman from './Roman';
+
+const baseYear = -800;
+const rangeOfBirthYears = 1200;
+const oldestAge = 90;
 
 const selectFrom = (array) => {
   let random = Math.random();
@@ -15,7 +19,7 @@ const selectFrom = (array) => {
   return array[index];
 }
 
-class NameGenerator {
+class RomanFactory {
 
   /**
    * Cognomen
@@ -29,12 +33,14 @@ class NameGenerator {
    * Praenomen
    * https://en.wikipedia.org/wiki/Praenomen
    */
-  generatePraenomen() {
-    let femme = !!(Math.random() < 0.5);
+  generatePraenomen(femme) {
     let sourceCollection = femme ? femme_praenomina : masc_praenomina;
     return selectFrom(sourceCollection);
   }
 
+  generateFemme() {
+    return !!(Math.random() < 0.5);
+  }
   generateAgnomen() {
     let agnomenChance = !!(Math.random() < 0.5);
     if (agnomenChance) {
@@ -50,19 +56,30 @@ class NameGenerator {
 
   generateDateOfBirth() {
     let date = new Date();
-    let yearsSince = Math.floor(Math.random() * 1200);
-    let ancientDate = new AncientDate(yearsSince, date);
+    let yearsSince = Math.floor(Math.random() * rangeOfBirthYears);
+    let ancientDate = new AncientDate(baseYear, yearsSince, date);
     return ancientDate.getDateString();
   }
 
-  generateNomen() {
-    let praenomen = this.generatePraenomen();
-    let cognomen = this.generateCognomen();
-    let agnomen = this.generateAgnomen();
-    let abbr = getAbbrvForName(praenomen);
-    let name = abbr ? `${abbr}. (${praenomen}) ${cognomen} ${agnomen || ''}` : `${praenomen} ${cognomen} ${agnomen || ''}`;
+  generateNomen(femme) {
+    let name = {
+      praenomen: this.generatePraenomen(femme),
+      cognomen: this.generateCognomen(),
+      agnomen: this.generateAgnomen(),
+    };
     return name;
+  }
+
+  generateAge() {
+    return Math.floor(Math.random() * oldestAge);
+  }
+
+  generateRoman() {
+    let femme = this.generateFemme();
+    let name = this.generateNomen(femme);
+    let roman = new Roman(name, this.generateDateOfBirth(), this.generateAge(), femme);
+    return roman;
   }
 }
 
-export default NameGenerator;
+export default RomanFactory;

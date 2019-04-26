@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import NameGenerator from './tools/NameGenerator';
+import RomanFactory from './tools/RomanFactory';
 class App extends Component {
   render() {
-    let generator = new NameGenerator();
-    let nomen = generator.generateNomen();
-    let age = generator.generateDateOfBirth();
+    let generator = new RomanFactory();
+    let roman = generator.generateRoman();
     return (
       <div className="App">
         <header className="App-header">
         </header>
         <p>
-          Name: {nomen}
+          Name: {roman.getNameString()}
         </p>
         <p>
-          Born: {age}
+          Born: {roman.getBirthdayString()}
+        </p>
+        <p>
+         {roman.getFemmeString()} Age: {roman.getAge()}
         </p>
       </div>
     );
