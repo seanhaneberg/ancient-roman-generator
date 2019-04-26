@@ -8,10 +8,9 @@ import agnomen from './Agnomen';
 import AncientDate from './AncientDate';
 import Roman from './Roman';
 
-const baseYear = -1000;
+const baseYear = -800;
 const rangeOfBirthYears = 1200;
 const oldestAge = 90;
-
 
 const selectFrom = (array) => {
   let random = Math.random();
