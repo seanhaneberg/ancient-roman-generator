@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ancient-roman-generator/precache-manifest.19945d0ed4e543711eb38747f75d5091.js"
+  "/ancient-roman-generator/precache-manifest.8ac69a96fce138a44f1770e25fd12009.js"
 );
 
 workbox.clientsClaim();

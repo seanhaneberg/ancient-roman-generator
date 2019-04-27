@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/ancient-roman-generator/static/js/runtime~main.6fa6b1ad.js"
   },
   {
-    "revision": "6a4955ce1eb87de773d2",
-    "url": "/ancient-roman-generator/static/js/main.e5683481.chunk.js"
+    "revision": "db536edf48a131d61691",
+    "url": "/ancient-roman-generator/static/js/main.3a5a02c9.chunk.js"
   },
   {
     "revision": "08ca966498d955f1c83b",
     "url": "/ancient-roman-generator/static/js/2.3d8dcad6.chunk.js"
   },
   {
-    "revision": "6a4955ce1eb87de773d2",
+    "revision": "db536edf48a131d61691",
     "url": "/ancient-roman-generator/static/css/main.0c11774d.chunk.css"
   },
   {
-    "revision": "13619357bde30c893bc74fc5a749388c",
+    "revision": "59f2b8f233cdd700b8ae9e60b3ecfae7",
     "url": "/ancient-roman-generator/index.html"
   }
 ];
