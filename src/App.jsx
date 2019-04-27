@@ -5,20 +5,30 @@ import RomanFactory from './tools/RomanFactory';
 class App extends Component {
   render() {
     let generator = new RomanFactory();
-    let roman = generator.generateRoman();
+    let count = Math.floor(Math.random() * 5) + 1;
+    let romans = generator.generateRomans(count);
+
+    let romansJSX = romans.map((roman) => {
+      return (
+        <div>
+          <p>
+            Name: {roman.getNameString()}
+          </p>
+          <p>
+            Born: {roman.getBirthdayString()}
+          </p>
+          <p>
+            {roman.getFemmeString()} Age: {roman.getAge()}
+          </p>
+        </div>
+      );
+    });
+
     return (
       <div className="App">
         <header className="App-header">
         </header>
-        <p>
-          Name: {roman.getNameString()}
-        </p>
-        <p>
-          Born: {roman.getBirthdayString()}
-        </p>
-        <p>
-         {roman.getFemmeString()} Age: {roman.getAge()}
-        </p>
+        {romansJSX}
       </div>
     );
   }

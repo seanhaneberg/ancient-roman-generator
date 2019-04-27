@@ -80,6 +80,16 @@ class RomanFactory {
     let roman = new Roman(name, this.generateDateOfBirth(), this.generateAge(), femme);
     return roman;
   }
+
+  generateRomans(count) {
+    let romans = [];
+    for (let i = 0; i < count; i++) {
+      let roman = this.generateRoman();
+      romans.push(roman);
+    }
+
+    return romans;
+  }
 }
 
 export default RomanFactory;
