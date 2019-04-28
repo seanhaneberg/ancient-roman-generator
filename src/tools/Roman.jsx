@@ -1,7 +1,7 @@
 import getAbbrvForName from './Abbrv';
 
 class Roman {
-  constructor(name, birthday, age, femme) {
+  constructor(name, birthday, age, femme, hill) {
 
     this.praenomen = name.praenomen;
     this.abbrv = getAbbrvForName(this.praenomen);
@@ -10,6 +10,7 @@ class Roman {
     this.birthday = birthday;
     this.age = age;
     this.femme = !!femme;
+    this.hill = hill;
   }
 
   getPraenomen() {
@@ -44,6 +45,10 @@ class Roman {
 
   getFemmeString() {
     return this.femme ? '♀' : '♂';
+  }
+
+  getHillName() {
+    return this.hill;
   }
 }
 
