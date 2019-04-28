@@ -20,6 +20,10 @@ class App extends Component {
           <p>
             {roman.getFemmeString()} Age: {roman.getAge()}
           </p>
+          <p>
+            Lives on: {roman.getHillName()}
+          </p>
+          <hr />
         </div>
       );
     });
