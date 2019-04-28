@@ -5,6 +5,7 @@
 import cognomina from './Cognomina';
 import { masc_praenomina, femme_praenomina } from './Praenomina';
 import agnomen from './Agnomen';
+import hills from './Hills';
 import AncientDate from './AncientDate';
 import Roman from './Roman';
 
@@ -74,10 +75,14 @@ class RomanFactory {
     return Math.floor(Math.random() * oldestAge);
   }
 
+  generateHill() {
+    return selectFrom(hills);
+  }
+
   generateRoman() {
     let femme = this.generateFemme();
     let name = this.generateNomen(femme);
-    let roman = new Roman(name, this.generateDateOfBirth(), this.generateAge(), femme);
+    let roman = new Roman(name, this.generateDateOfBirth(), this.generateAge(), femme, this.generateHill());
     return roman;
   }
 
